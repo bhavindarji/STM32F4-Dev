@@ -140,30 +140,30 @@ static void BSP_UART_MspInit(UART_HandleTypeDef* huart)
 
 #ifdef DMA_MODE_UART4
     /* Peripheral DMA init*/
-    hdma_usart6_tx.Instance = DMA1_Stream4;
-    hdma_usart6_tx.Init.Channel = DMA_CHANNEL_4;
-    hdma_usart6_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
-    hdma_usart6_tx.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_usart6_tx.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_usart6_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-    hdma_usart6_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
-    hdma_usart6_tx.Init.Mode = DMA_NORMAL;
-    hdma_usart6_tx.Init.Priority = DMA_PRIORITY_LOW;
-    hdma_usart6_tx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    hdma_usart4_tx.Instance = DMA1_Stream4;
+    hdma_usart4_tx.Init.Channel = DMA_CHANNEL_4;
+    hdma_usart4_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+    hdma_usart4_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_usart4_tx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_usart4_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_usart4_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_usart4_tx.Init.Mode = DMA_NORMAL;
+    hdma_usart4_tx.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_usart4_tx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     HAL_DMA_Init(&hdma_uart4_tx);
 
     __HAL_LINKDMA(huart,hdmatx,hdma_uart4_tx);
 
-    hdma_usart6_rx.Instance = DMA1_Stream2;
-    hdma_usart6_rx.Init.Channel = DMA_CHANNEL_4;
-    hdma_usart6_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_usart6_rx.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_usart6_rx.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_usart6_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-    hdma_usart6_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
-    hdma_usart6_rx.Init.Mode = DMA_CIRCULAR;
-    hdma_usart6_rx.Init.Priority = DMA_PRIORITY_LOW;
-    hdma_usart6_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    hdma_usart4_rx.Instance = DMA1_Stream2;
+    hdma_usart4_rx.Init.Channel = DMA_CHANNEL_4;
+    hdma_usart4_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_usart4_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_usart4_rx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_usart4_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_usart4_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_usart4_rx.Init.Mode = DMA_CIRCULAR;
+    hdma_usart4_rx.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_usart4_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     HAL_DMA_Init(&hdma_uart4_rx);
 
     __HAL_LINKDMA(huart,hdmarx,hdma_uart4_rx);
